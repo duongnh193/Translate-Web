@@ -28,7 +28,7 @@ security:
 
 ai:
   gemini:
-    api-key: AIzaSyDiY9o9XECHh-fEcodMcUgJaQULYS4kBHo
+    api-key: ${ai.gemini.api-key}
     model: gemini-2.0-flash
     endpoint: https://generativelanguage.googleapis.com/v1beta/models
 
