@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: translate-be
+  datasource:
+    url: jdbc:mysql://localhost:3306/translater?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  sql:
+    init:
+      mode: always
+      schema-locations: file:database/schema.sql
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:dev-secret-key-please-change-please-change}
+    expiration-minutes: 120
+
+ai:
+  gemini:
+    api-key: AIzaSyDiY9o9XECHh-fEcodMcUgJaQULYS4kBHo
+    model: gemini-2.0-flash
+    endpoint: https://generativelanguage.googleapis.com/v1beta/models
+
+logging:
+  level:
+    com.example.translate_be: INFO
